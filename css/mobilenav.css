@@ -1,0 +1,97 @@
+.btn-mobile-nav {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  display: none;
+}
+
+.icon-mobile-nav {
+  height: 4.8rem;
+  width: 4.8rem;
+  color: #333;
+}
+
+.icon-mobile-nav[name="close-outline"] {
+  /*! Selectots pēc attribute(name) */
+  display: none;
+}
+
+/*! Sticky navigation */
+
+.sticky .header {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.03);
+  height: 8rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  z-index: 10;
+}
+
+.sticky .section-hero {
+  margin-top: 9.6rem;
+}
+
+@media (max-width: 59em) {
+  /**MOBILE NAVIGATION on querries*/
+  .main-nav {
+    background-color: rgb(255, 255, 255, 0.97);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    -webkit-backdrop-filter: blur(1px); /*! For browser support*/
+    backdrop-filter: blur(1px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /**Hiding nav (display:none neatļauj transitions)*/
+    /** display: none; */
+    opacity: 0;
+    transition: all 0.5s ease-in;
+    /*!Make it unaccessible*/
+    pointer-events: none;
+    /*!Hide it from screen readers*/
+    visibility: hidden;
+    /*!Sliding effect*/
+    transform: translateX(100%);
+  }
+
+  .nav-open .icon-mobile-nav[name="close-outline"] {
+    /*! Selectots pēc attribute(name) */
+    display: block;
+  }
+
+  .nav-open .icon-mobile-nav[name="menu-outline"] {
+    /*! Selectots pēc attribute(name) */
+    display: none;
+  }
+
+  .nav-open .main-nav {
+    opacity: 1; /*!Šeit pataisu visu redzamu un izmantojamu*/
+    visibility: visible;
+    pointer-events: auto;
+    /*!Sliding effect*/
+    transform: translateX(0);
+  }
+
+  .main-nav-list {
+    flex-direction: column;
+    gap: 4.8rem;
+  }
+
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 3rem;
+  }
+
+  .btn-mobile-nav {
+    display: block;
+    z-index: 9;
+  }
+}
+/*!------------------------------------------------------------------*/
