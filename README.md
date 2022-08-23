@@ -1,4 +1,4 @@
-# <h1>Mapty project</h1>
+# <h1>Omnifood project</h1>
 
  <p>This project was made by following course on Udemy.<br></p>
 
